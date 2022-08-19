@@ -1,0 +1,37 @@
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{
+		java.util.Scanner inp = new java.util.Scanner(System.in);
+		System.out.println("Lütfen KDV hesaplamasını görmek istediğiniz değeri giriniz:");
+		double price = Double.parseDouble(inp.nextLine());
+		
+		System.out.printf("KDV'siz fiyat : %.02f%n"
+						+ "KDV'li fiyar : %.02f%n"
+						+ "KDV tutarı %.02f", price, Kdv.calculatTotalcost(price), Kdv.calculateKdv(price));	
+		
+		
+		
+	}
+}
+ 
+
+class Kdv {
+	
+	public static double calculateKdv(double price) 
+	{
+		double kdvRatio = price > 1000 ? 0.08 : 0.18; 
+		
+		double kdv = kdvRatio * price;
+		
+		return kdv;
+		
+	}
+	
+	public static double calculatTotalcost(double price)
+	{
+		return price + calculateKdv(price);
+	}
+	
+}
