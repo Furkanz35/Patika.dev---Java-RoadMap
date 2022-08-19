@@ -1,0 +1,37 @@
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{
+		java.util.Scanner inp = new java.util.Scanner(System.in);
+		System.out.println("Lütfen içgenin kenar uzunluklarını giriniz:");
+		double d1 = Double.parseDouble(inp.nextLine());
+		double d2 = Double.parseDouble(inp.nextLine());
+		double d3 = Double.parseDouble(inp.nextLine());
+		
+		Triangle.trianglePrint(d1, d2, d3);
+		
+		
+	}
+}
+ 
+
+class Triangle {
+	
+	public static void trianglePrint(double d1, double d2, double d3) 
+	{
+		System.out.printf("Üçgenin çevresi = %.2f%n "
+				        + "Üçgenin alanı = %.2f", getCircumferenceofTriange(d1, d2, d3), getAreaOfTriange(d1, d2, d3));
+	}
+	
+	public static double getCircumferenceofTriange(double d1, double d2, double d3) {
+		
+		return  d1 + d2 + d3;
+	}
+	
+	public static double getAreaOfTriange (double d1, double d2, double d3) {
+		double u = getCircumferenceofTriange (d1, d2, d3) / 2;
+		return Math.sqrt( u * (u - d1) * (u - d2) * (u - d3) );
+
+	}
+}
