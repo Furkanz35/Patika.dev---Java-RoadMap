@@ -1,0 +1,35 @@
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{
+		java.util.Scanner inp = new java.util.Scanner(System.in);
+		int Matematik, Fizik, Kimya, Türkçe, Tarih, Müzik;
+		
+		System.out.printf("Matematik notunuzu giriniz: %n");
+		Matematik = Integer.parseInt(inp.nextLine());
+		
+		System.out.printf("Fizik notunuzu giriniz: %n");
+		Fizik = Integer.parseInt(inp.nextLine());
+		
+		System.out.printf("Kimya notunuzu giriniz: %n");
+		Kimya = Integer.parseInt(inp.nextLine());
+		
+		System.out.printf("Türkçe notunuzu giriniz: %n");
+		Türkçe = Integer.parseInt(inp.nextLine());
+		
+		System.out.printf("Tarih notunuzu giriniz: %n");
+		Tarih = Integer.parseInt(inp.nextLine());
+		
+		System.out.printf("Müzik notunuzu giriniz: %n");
+		Müzik = Integer.parseInt(inp.nextLine());
+		
+		int Sum = Matematik + Fizik + Kimya + Türkçe + Tarih + Müzik;
+		double mean = Sum / 6.;
+		
+		String sonuc = (mean > 60 ) ? "Sınıfı Geçti" :"Sınıfta kaldı";
+		System.out.println(sonuc);
+		
+	}
+}
+ 
