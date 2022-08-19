@@ -1,0 +1,23 @@
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{
+		java.util.Scanner inp = new java.util.Scanner(System.in);
+		System.out.printf("Kaç km yol gidildiğini giriniz: ");
+		
+		double km = Double.parseDouble(inp.nextLine());
+		System.out.printf("Ödenecek tutar : %.2f", Taximeter.getPrice(km));	
+	}
+}
+ 
+
+class Taximeter {
+	
+	public static double getPrice(double km) 
+	{
+		double val = 10 + (2.20 * km);
+		
+		return val > 20 ? val : 20;
+	}
+}
