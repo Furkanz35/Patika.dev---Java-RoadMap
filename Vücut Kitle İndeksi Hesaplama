@@ -1,0 +1,19 @@
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{	
+		java.util.Scanner inp = new java.util.Scanner(System.in);
+		
+		System.out.println("Lütfen boyunuzu (metre cinsinde) giriniz :");
+		double height = Double.parseDouble(inp.nextLine());
+		
+		System.out.println("Lütfen kilonuzu giriniz :");
+		double weight = Double.parseDouble(inp.nextLine());
+		
+		
+		System.out.printf("Vücut Kitle İndeksiniz : %.2f", weight / (height * height) );
+	}
+}
+ 
+
