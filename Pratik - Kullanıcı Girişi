@@ -1,0 +1,48 @@
+package csd;
+/**
+ * KullanciGiris
+ */
+import java.util.Scanner;
+
+public class App {
+
+    public static void main(String[] args) {
+ 
+    	java.util.Scanner inp = new java.util.Scanner(System.in);
+    	
+    	String username,password;
+    	
+    	System.out.print("Kullanıcı adınızı giriniz: ");
+		username = inp.nextLine();
+		System.out.print("Şifreniz: ");
+		password = inp.nextLine();
+    	
+		
+		if(username.equals("furkan123")  && password.equals("fzfz!2"))
+			System.out.println("Başarılı giriş gerçekeştirdiniz...");
+		else {
+			System.out.println("Hatalı giriş gerçekleştirdiniz");
+			System.out.println("Şifrenizi sıfırlamak istiyor musunuz? (E) (H)");
+			char c = inp.next().charAt(0);
+			if(c == 'h' || c == 'H')
+				System.exit(0);
+
+			else if(c == 'e' || c == 'E') {
+				System.out.println("Lütfen yeni şifrenizi giriniz:");
+				String newpass = inp.next();
+				
+				if(newpass.equals("fzfz!2") || newpass.equals(password))
+					System.out.printf("Şifre oluşturulamadı, lütfen başka şifre giriniz.%n");
+				
+				else
+					System.out.println("Şifre değiştirildi");
+				
+			}
+		}
+    	
+    	
+}
+
+}
+
+
