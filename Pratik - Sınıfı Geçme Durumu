@@ -1,0 +1,51 @@
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{
+		java.util.Scanner inp = new java.util.Scanner(System.in);
+		int Matematik, Fizik, Kimya, Türkçe, Tarih, Müzik, sum;
+		sum = 0;
+		int cnt = 0;
+		
+		System.out.printf("Matematik notunuzu giriniz: %n");
+		Matematik = Integer.parseInt(inp.nextLine());
+		if(Matematik >= 0 || Matematik <= 100) {
+		sum += Matematik;
+		++cnt;
+		}
+		
+		System.out.printf("Fizik notunuzu giriniz: %n");
+		Fizik = Integer.parseInt(inp.nextLine());
+		if(Fizik >= 0 || Fizik <= 100) {
+		sum += Fizik;
+		++cnt;
+		}
+		
+		System.out.printf("Kimya notunuzu giriniz: %n");
+		Kimya = Integer.parseInt(inp.nextLine());
+		if(Kimya >= 0 || Kimya <= 100) {
+		sum += Kimya;
+		++cnt;
+		}
+		
+		System.out.printf("Türkçe notunuzu giriniz: %n");
+		Türkçe = Integer.parseInt(inp.nextLine());		
+		if(Türkçe >= 0 || Türkçe <= 100) {
+		sum += Türkçe;
+		++cnt;
+		}
+		
+		System.out.printf("Müzik notunuzu giriniz: %n");
+		Müzik = Integer.parseInt(inp.nextLine());
+		if(Müzik >= 0 || Müzik <= 100) {
+		sum += Müzik;
+		++cnt;
+		}
+		double mean = (double)sum / cnt;
+		
+		String sonuc = (mean > 60 ) ? "Sınıfı Geçti" :"Sınıfta kaldı";
+		System.out.println(sonuc);
+		
+	}
+}
