@@ -1,0 +1,65 @@
+package csd;
+
+class App {
+	
+	public static void main(String [] args) {
+		
+		Calculator.run();
+		
+	}
+	
+	
+}
+
+class Calculator {
+	
+	public static void run()
+	{	java.util.Scanner inp = new java.util.Scanner(System.in);
+		int choice = 0;
+		System.out.println("Hangi işlemi gerçekleştirmek istersiniz?");
+		System.out.printf("[1]Toplama%n[2]Çıkarma%n[3}Çarpma%n[4]Bölme%n");
+		choice =  Integer.parseInt(inp.nextLine());
+		System.out.println("İşleme sokmak istediğiniz değerleri sırası ile giriniz:");
+		
+		double val1 = Double.parseDouble(inp.nextLine());
+		double val2 = Double.parseDouble(inp.nextLine());
+		
+		switch(choice) {
+		
+		case 1:
+			System.out.printf("%.2f + %.2f = %.2f", val1, val2, sum(val1,val2));
+			break;
+		case 2:
+			System.out.printf("%.2f - %.2f = %.2f", val1, val2, substraction(val1,val2));
+			break;
+		case 3:
+			System.out.printf("%.2f * %.2f = %.2f", val1, val2, multiplication(val1,val2));
+			break;
+		case 4:
+			System.out.printf("%.2f + %.2f = %.2f", val1, val2, divition(val1,val2));
+			break;
+		default:
+			System.out.print("Yanlış bir seçim yaptınız");
+		}
+		
+	}
+		
+	
+	public static double sum(double val1, double val2)
+	{
+		return val1 + val2;
+	}
+	public static double substraction(double val1, double val2)
+	{
+		return val1 - val2;
+	}
+	public static double multiplication(double val1, double val2)
+	{
+		return val1 * val2;
+	}
+	public static double divition(double val1, double val2)
+	{
+		return val1 / val2;
+	}
+	
+}
